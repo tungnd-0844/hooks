@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, ActivityIndicator, FlatList } from "react-native";
 import { APIs } from "../../api/methods/movies";
+import NavigationService from "../../navigation/NavigationService";
 import { TYPE, alert } from "../../utils/stringUtils";
 import ItemGenre from "../../components/ItemGenre";
 import Toolbar from "../../components/Toolbar";
@@ -33,8 +34,12 @@ const HomeView = props => {
     };
   }, []);
 
-  navigate = item => {
-    props.navigation.navigate("Detail", { ITEM: item });
+  navigateDetails = item => {
+    NavigationService.navigate("Detail", { ITEM: item });
+  };
+
+  navigateMovies = genre => {
+    NavigationService.navigate("ListMovies", { GENRE: genre });
   };
 
   return (
@@ -47,7 +52,13 @@ const HomeView = props => {
           <FlatList
             data={data}
             renderItem={({ item, index }) => {
-              return <ItemGenre item={item} navigate={navigate} />;
+              return (
+                <ItemGenre
+                  item={item}
+                  navigateDetails={navigateDetails}
+                  navigateMovies={navigateMovies}
+                />
+              );
             }}
             keyExtractor={({ id }, index) => index.toString()}
           />

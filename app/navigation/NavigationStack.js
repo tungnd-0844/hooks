@@ -8,6 +8,7 @@ import {
 import Home from "../screens/home/HomeView";
 import Detail from "../screens/detailmovie/DetailMovie";
 import Favourite from "../screens/favourite/FavouriteView";
+import ListMovies from "../screens/listmovie/ListMoviesView";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 const RNHome = createStackNavigator(
@@ -18,6 +19,10 @@ const RNHome = createStackNavigator(
     },
     Detail: {
       screen: Detail,
+      navigationOptions: { header: null, gesturesEnabled: false }
+    },
+    ListMovies: {
+      screen: ListMovies,
       navigationOptions: { header: null, gesturesEnabled: false }
     }
   },
