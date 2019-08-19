@@ -1,4 +1,5 @@
 import ApiConstants from "./ApiConstants";
+import { alert } from "../utils/stringUtils";
 export default function api(path, params, method, token) {
   let options;
   options = {
@@ -14,5 +15,5 @@ export default function api(path, params, method, token) {
   return fetch(ApiConstants.BASE_URL + path, options)
     .then(response => response.json())
     .then(json => json.results)
-    .catch(error => error);
+    .catch(error => alert(error.toString()));
 }
