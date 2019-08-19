@@ -18,13 +18,14 @@ const styles = StyleSheet.create({
     width: "100%",
     backgroundColor: "#FFF",
     padding: 8,
+    paddingTop: 16,
     paddingLeft: 16,
     paddingRight: 16,
     justifyContent: "space-between",
     flexDirection: "row"
   },
   titleHeader: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: "bold",
     fontFamily: "Cochin"
   }

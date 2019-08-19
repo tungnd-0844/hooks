@@ -9,8 +9,8 @@ export default function DetailMovie(props) {
   return (
     <View>
       <ImageBackground
-        source={{ uri: IMAGE_URL + item.poster_path }}
-        style={{ height: "100%", width: "100%" }}
+        source={{ uri: IMAGE_URL + item.backdrop_path }}
+        style={{ height: 250, width: "100%" }}
       >
         <Text>{item.title}</Text>
       </ImageBackground>

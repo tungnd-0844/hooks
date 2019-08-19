@@ -15,14 +15,16 @@ const ItemGenre = props => {
     <View>
       <View style={styles.containerHeader}>
         <Text>{item.genre.toUpperCase()}</Text>
-        <Text>Xem tất cả</Text>
+        <TouchableOpacity onPress={() => props.navigateMovies(item.genre)}>
+          <Text>Xem tất cả</Text>
+        </TouchableOpacity>
       </View>
       <FlatList
         data={item.arr}
         horizontal={true}
         renderItem={({ item, index }) => {
           return (
-            <TouchableOpacity onPress={() => props.navigate(item)}>
+            <TouchableOpacity onPress={() => props.navigateDetails(item)}>
               <ItemMovie item={item} />
             </TouchableOpacity>
           );
@@ -35,7 +37,8 @@ const ItemGenre = props => {
 export default ItemGenre;
 
 ItemGenre.propTypes = {
-  navigate: PropTypes.func
+  navigateDetails: PropTypes.func.isRequired,
+  navigateMovies: PropTypes.func.isRequired
 };
 
 const styles = StyleSheet.create({

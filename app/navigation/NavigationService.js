@@ -16,11 +16,7 @@ function navigate(routeName, params) {
 }
 
 function goBack(key) {
-  _navigator.dispatch(
-    NavigationActions.goBack({
-      key: key
-    })
-  );
+  _navigator.dispatch(NavigationActions.back(key));
 }
 
 export default {
