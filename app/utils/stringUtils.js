@@ -2,7 +2,7 @@ import { Platform, ToastAndroid, Alert } from "react-native";
 
 export const TYPE = ["popular", "now_playing", "upcoming", "top_rated"];
 
-export const IMAGE_URL = "http://image.tmdb.org/t/p/w300";
+export const IMAGE_URL = "http://image.tmdb.org/t/p/w500";
 
 export const alert = notifi => {
   Platform.OS === "android"
